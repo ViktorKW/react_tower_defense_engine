@@ -1,0 +1,60 @@
+@use '../variables' as v;
+
+.display-2xl {
+    font-size: v.$display-2xl;
+    line-height: 1.4;
+    letter-spacing: -0.02rem;
+}
+
+.display-xl {
+    font-size: v.$display-2xl;
+    line-height: 1.4;
+    letter-spacing: -0.02rem;
+}
+
+.display-lg {
+    font-size: v.$display-lg;
+    line-height: 1.5;
+    letter-spacing: -0.02rem;
+}
+
+.display-md {
+    font-size: v.$display-md;
+    line-height: 1.4;
+    letter-spacing: -0.02rem;
+}
+
+.display-sm {
+    font-size: v.$display-sm;
+    line-height: 1.6;
+}
+
+.display-xs {
+    font-size: v.$display-xs;
+    line-height: 1.6;
+}
+
+.text-xl {
+    font-size: v.$text-xl;
+    line-height: 1.6;
+}
+
+.text-lg {
+    font-size: v.$text-lg;
+    line-height: 1.7;
+}
+
+.text-md {
+    font-size: v.$text-md;
+    line-height: 1.7;
+}
+
+.text-sm {
+    font-size: v.$text-sm;
+    line-height: 1.8;
+}
+
+.text-xs {
+    font-size: v.$text-xs;
+    line-height: 1.8;
+}

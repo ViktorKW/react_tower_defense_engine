@@ -1,0 +1,404 @@
+@use "../styles/variables" as *;
+
+%button-sm {
+    padding: 8px 14px;
+    font-size: $text-sm;
+    line-height: 1.43;
+}
+
+%button-md {
+    padding: 10px 16px;
+    font-size: $text-sm;
+    line-height: 1.43;
+}
+
+%button-lg {
+    padding: 10px 18px;
+    font-size: $text-md;
+    line-height: 1.5;
+}
+
+%button-xl {
+    padding: 12px 20px;
+    font-size: $text-md;
+    line-height: 1.5;
+}
+
+%button-2xl {
+    padding: 16px 28px;
+    font-size: $text-lg;
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $button-shadow;
+    font-weight: $button-font-weight;
+    border-radius: $button-border-radius;
+    border: 1px solid transparent;
+    outline: none;
+    user-select: none;
+    text-decoration: none;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &-sm {
+        @extend %button-sm;
+    }
+
+    &-md {
+        @extend %button-md;
+    }
+
+    &-lg {
+        @extend %button-lg;
+    }
+
+    &-xl {
+        @extend %button-xl;
+    }
+
+    &-2xl {
+        @extend %button-2xl;
+    }
+
+    &-regular {
+        &.button-error {
+            color: $white;
+            background: $error600;
+            border-color: $error600;
+
+            &:hover {
+                background: $error500;
+                border-color: $error500;
+            }
+
+            &:active {
+                background: $error700;
+                border-color: $error700;
+            }
+
+            &:disabled {
+                background: $error100;
+                border-color: $error100;
+            }
+        }
+
+        &.button-primary {
+            color: $white;
+            background: $primary600;
+            border-color: $primary600;
+
+            &:hover {
+                background: $primary500;
+                border-color: $primary500;
+            }
+
+            &:active {
+                background: $primary700;
+                border-color: $primary700;
+            }
+
+            &:disabled {
+                background: $primary100;
+                border-color: $primary100;
+            }
+        }
+
+        &.button-warning {
+            color: $white;
+            background: $warning600;
+            border-color: $warning600;
+
+            &:hover {
+                background: $warning500;
+                border-color: $warning500;
+            }
+
+            &:active {
+                background: $warning700;
+                border-color: $warning700;
+            }
+
+            &:disabled {
+                background: $warning100;
+                border-color: $warning100;
+            }
+        }
+
+        &.button-secondary {
+            color: $white;
+            background: $success600;
+            border-color: $success600;
+
+            &:hover {
+                background: $success500;
+                border-color: $success500;
+            }
+
+            &:active {
+                background: $success700;
+                border-color: $success700;
+            }
+
+            &:disabled {
+                background: $success100;
+                border-color: $success100;
+            }
+        }
+
+        &.button-gray {
+            color: $white;
+            background: $gray600;
+            border-color: $gray600;
+
+            &:hover {
+                background: $gray900;
+                border-color: $gray900;
+            }
+
+            &:active {
+                background: $gray600;
+                border-color: $gray600;
+            }
+
+            &:disabled {
+                background: $gray300;
+                border-color: $gray300;
+            }
+        }
+    }
+
+    &-outline {
+        background: transparent;
+
+        &.button-error {
+            color: $error500;
+            border-color: $error100;
+
+            &:hover {
+                border-color: $error500;
+            }
+
+            &:active {
+                background: $error25;
+                border-color: $error500;
+            }
+
+            &:disabled {
+                color: $error100;
+                border-color: $error50;
+                background: $error25;
+            }
+        }
+
+        &.button-primary {
+            color: $primary600;
+            border-color: $primary100;
+
+            &:hover {
+                border-color: $primary600;
+            }
+
+            &:active {
+                background: $primary25;
+                border-color: $primary600;
+            }
+
+            &:disabled {
+                color: $primary100;
+                border-color: $primary50;
+                background: $primary25;
+            }
+        }
+
+        &.button-warning {
+            color: $warning600;
+            border-color: $warning100;
+
+            &:hover {
+                border-color: $warning600;
+            }
+
+            &:active {
+                background: $warning25;
+                border-color: $warning600;
+            }
+
+            &:disabled {
+                color: $warning100;
+                border-color: $warning50;
+                background: $warning25;
+            }
+        }
+
+        &.button-secondary {
+            color: $success600;
+            border-color: $success100;
+
+            &:hover {
+                border-color: $success600;
+            }
+
+            &:active {
+                background: $success25;
+                border-color: $success600;
+            }
+
+            &:disabled {
+                color: $success100;
+                border-color: $success50;
+                background: $success25;
+            }
+        }
+
+        &.button-gray {
+            color: $gray900;
+            border-color: $gray300;
+
+            &:hover {
+                border-color: $gray900;
+            }
+
+            &:active {
+                background: $gray900;
+                border-color: $gray900;
+                color: $white;
+            }
+
+            &:disabled {
+                color: $gray300;
+                border-color: $gray200;
+                background: $gray50;
+            }
+        }
+    }
+
+    &-ghost {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        &.button-error {
+            color: $error600;
+
+            &:hover {
+                color: $error400;
+            }
+
+            &:active {
+                color: $error700;
+            }
+
+            &:disabled {
+                color: $error100;
+            }
+        }
+
+        &.button-primary {
+            color: $primary600;
+
+            &:hover {
+                color: $primary400;
+            }
+
+            &:active {
+                color: $primary700;
+            }
+
+            &:disabled {
+                color: $primary100;
+            }
+        }
+
+        &.button-warning {
+            color: $warning600;
+
+            &:hover {
+                color: $warning400;
+            }
+
+            &:active {
+                color: $warning700;
+            }
+
+            &:disabled {
+                color: $warning100;
+            }
+        }
+
+        &.button-secondary {
+            color: $success600;
+
+            &:hover {
+                color: $success500;
+            }
+
+            &:active {
+                color: $success700;
+            }
+
+            &:disabled {
+                color: $success100;
+            }
+        }
+
+        &.button-gray {
+            color: $gray600;
+
+            &:hover {
+                color: $gray900;
+            }
+
+            &:active {
+                color: $gray900;
+            }
+
+            &:disabled {
+                color: $gray300;
+            }
+        }
+    }
+
+    &-icon {
+        &-wrapper {
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+        }
+
+        &-start {
+            margin-right: 8px;
+        }
+
+        &-end {
+            margin-left: 8px;
+        }
+
+        &-spin {
+            animation: spin 1.2s linear infinite;
+        }
+    }
+}
+
+.button-2xl .button-icon-wrapper {
+    width: 22px;
+    height: 22px;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

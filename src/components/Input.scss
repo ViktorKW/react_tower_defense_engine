@@ -1,0 +1,164 @@
+@use '../styles/variables' as *;
+@use '../styles/common/typography' as *;
+
+.form-control {
+    position: relative;
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+        margin-top: 20px;
+    }
+}
+
+.control {
+    &__label {
+        font-weight: $medium;
+        font-size: $text-sm;
+        line-height: 1.7;
+        color: $gray700;
+        margin-bottom: 6px;
+        cursor: pointer;
+        align-self: flex-start;
+    }
+
+    &__field {
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        border-radius: $input-border-radius;
+        box-shadow: $shadow-xs;
+    }
+
+    &__prefix,
+    &__postfix {
+        display: flex;
+        align-items: center;
+        padding: 0 11px;
+        color: $gray600;
+        font-weight: $regular;
+        @extend .text-md;
+        font-size: 1rem;
+        line-height: 1.7;
+        user-select: none;
+        border: 1px solid $gray300;
+        background: #fff;
+
+        &.custom {
+            border-right: 0;
+        }
+    }
+
+    &__prefix {
+        order: -1;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        & ~ .control__input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+
+        &.custom {
+            padding-right: 0;
+        }
+    }
+
+    &__postfix {
+        order: 1;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+        & ~ .control__input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+    }
+
+    &__input {
+        background: $white;
+        border: 1px solid $gray300;
+        border-radius: $input-border-radius;
+        outline: none;
+        padding: 8px 12px;
+        font-size: $text-md;
+        line-height: 1.7;
+        color: $gray900;
+        width: 100%;
+        margin: 0;
+        resize: none; // for textarea
+
+        &::placeholder {
+            color: $gray600;
+            font-weight: 400;
+        }
+
+        &:disabled {
+            color: $gray300;
+            border-color: $gray200;
+            background: $gray50;
+
+            &::placeholder {
+                color: $gray300;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: none;
+    }
+
+    &__hint {
+        font-weight: $regular;
+        font-size: $text-sm;
+        color: $gray600;
+        line-height: 1.8;
+        margin-top: 4px;
+        display: inline-block;
+
+        &--error {
+            color: $error500;
+        }
+    }
+}
+
+.form-control {
+    &--error {
+        .control__prefix,
+        .control__postfix,
+        .control__input {
+            border-color: $error300;
+        }
+    }
+
+    &--error:not(&--password):not(&--postfix) {
+        .control__input {
+            padding-right: 35px;
+        }
+
+        .control__icon {
+            display: inline-flex;
+            color: $error300;
+        }
+    }
+
+    &--password {
+        .control__input {
+            padding-right: 35px;
+        }
+
+        .control__icon {
+            display: inline-flex;
+            cursor: pointer;
+        }
+    }
+}

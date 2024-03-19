@@ -1,0 +1,26 @@
+@mixin generate-spacing-classes($property, $directions, $start, $end) {
+    @for $i from $start through $end {
+        @if $directions == null {
+            .#{str-slice($property, 1, 1)}#{$i} {
+                #{$property}: #{$i}px !important;
+            }
+        } @else {
+            @each $direction in $directions {
+                .#{str-slice($property, 1, 1)}#{str-slice($direction, 1, 1)}#{$i} {
+                    #{$property}-#{$direction}: #{$i}px !important;
+                }
+            }
+        }
+    }
+}
+
+
+$directions: top, bottom, left, right;
+$start: 0;
+$end: 32;
+
+@include generate-spacing-classes(margin, $directions, $start, $end);
+@include generate-spacing-classes(margin, null, $start, $end);
+@include generate-spacing-classes(gap, null, $start, $end);
+@include generate-spacing-classes(padding, $directions, $start, $end);
+@include generate-spacing-classes(padding, null, $start, $end);

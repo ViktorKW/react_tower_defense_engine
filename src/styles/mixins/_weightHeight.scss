@@ -1,0 +1,14 @@
+@function calculatePercentage($value) {
+    @return $value * 1%;
+}
+  
+@mixin generate-dimension-classes($maxValue, $property, $propertyName) {
+@for $i from 0 through $maxValue {
+    .#{$property}#{$i} {
+    #{$propertyName}: calculatePercentage($i);
+    }
+}
+}
+
+@include generate-dimension-classes(100, 'w', "width");
+@include generate-dimension-classes(100, 'h', "height");

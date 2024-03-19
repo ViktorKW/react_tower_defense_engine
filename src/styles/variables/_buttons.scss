@@ -1,0 +1,5 @@
+@use 'shadows' as shadows;
+
+$button-border-radius: 8px;
+$button-shadow: shadows.$shadow-xs;
+$button-font-weight: 700;
